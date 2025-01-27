@@ -9,7 +9,7 @@
 
 # On Linux and macOS you can run this script directly - `./start-database.sh`
 
-DB_CONTAINER_NAME="notworking_events-mysql"
+DB_CONTAINER_NAME="notworking_events_mysql"
 
 if ! [ -x "$(command -v docker)" ]; then
   echo -e "Docker is not installed. Please install docker and try again.\nDocker install guide: https://docs.docker.com/engine/install/"
@@ -34,7 +34,7 @@ fi
 
 # import env variables from .env
 set -a
-source .env
+source .env.example
 
 DB_PASSWORD=$(echo "$DATABASE_URL" | awk -F':' '{print $3}' | awk -F'@' '{print $1}')
 DB_PORT=$(echo "$DATABASE_URL" | awk -F':' '{print $4}' | awk -F'\/' '{print $1}')
@@ -53,7 +53,7 @@ fi
 
 docker run -d \
   --name $DB_CONTAINER_NAME \
-  -e MYSQL_ROOT_PASSWORD="$DB_PASSWORD" \
+  -e MYSQL_ROOT_PASSWORD="abc123def" \
   -e MYSQL_DATABASE=notworking_events \
   -p "$DB_PORT":3306 \
   docker.io/mysql && echo "Database container '$DB_CONTAINER_NAME' was successfully created"
