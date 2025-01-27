@@ -12,6 +12,12 @@ const config = {
     eslint: {
         ignoreDuringBuilds: true,
     },
+    images: {
+        domains: [
+            "images.unsplash.com",
+            "ufs.sh"
+        ],
+    },
 };
 
 export default config;

@@ -2,6 +2,7 @@ import "~/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import TopNav from "./layer2/TopNav";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -14,8 +15,8 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body>
-        <div className="w-full">First layout</div>
+      <body className="font-sans flex-col gap-4">
+        <TopNav />
         {children}
         </body>
     </html>
