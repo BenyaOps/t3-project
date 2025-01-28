@@ -3,7 +3,7 @@ import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@c
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
-import TopNav from "./layer2/TopNav";
+import TopNav from "./_components/TopNav";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
