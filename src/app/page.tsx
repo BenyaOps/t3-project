@@ -1,3 +1,4 @@
+import { SignedOut } from "@clerk/nextjs";
 import { db } from "~/server/db";
 
 export const dynamic = "force-dynamic";
@@ -22,7 +23,9 @@ export default async function HomePage() {
 
   return (
     <main>
-      <span>{ JSON.stringify(images) }</span>
+      <SignedOut>
+        <div className="w-full h-full text-2xl">Please sign in above</div>
+      </SignedOut>
       <div className="flex flex-wrap gap-4">
         {posts.map((post) => (
           <div key={post.id} className="w-48">
