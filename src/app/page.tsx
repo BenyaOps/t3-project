@@ -1,11 +1,15 @@
-import Link from "next/link";
 import { db } from "~/server/db";
+
+export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
 
   const posts = await db.query.posts.findMany();
-
-  const mockUrls = [
+  const images = await db.query.images.findMany({
+    orderBy: (model, {desc}) => desc(model.id),
+  });
+  // HARDCODE EXAMPLE IMAGES URLS
+  /*const mockUrls = [
     "https://9cy4yz6jxh.ufs.sh/f/ZQne984Awk8UW0AoDGPSF4jVBRxGfpkcwb76d0P23IzlQhUJ",
     "https://9cy4yz6jxh.ufs.sh/f/ZQne984Awk8UW0AoDGPSF4jVBRxGfpkcwb76d0P23IzlQhUJ",
     "https://9cy4yz6jxh.ufs.sh/f/ZQne984Awk8UW0AoDGPSF4jVBRxGfpkcwb76d0P23IzlQhUJ"
@@ -14,19 +18,20 @@ export default async function HomePage() {
     id: index,
     url,
     title: `Image ${index + 1}`
-  }));
+  }));*/
 
   return (
     <main>
+      <span>{ JSON.stringify(images) }</span>
       <div className="flex flex-wrap gap-4">
         {posts.map((post) => (
           <div key={post.id} className="w-48">
             <p>{ post.name }</p>
           </div>
         ))}
-        {[...mockImages, ...mockImages].map((image, idx) => (
-          <div key={Date().toString() + image.id + idx}  className="w-48">
-            <img src={image.url} alt={image.title} className="p-4" />
+        {[...images, ...images].map((image, idx) => (
+          <div key={Date().toString() + image.id + idx}  className="w-48 flex fllex-col">
+            <img src={image?.url ?? 'https://9cy4yz6jxh.ufs.sh/f/ZQne984Awk8UW0AoDGPSF4jVBRxGfpkcwb76d0P23IzlQhUJ'} alt={image.title ?? 'title'} className="p-4" />
           </div>
         ))}
       </div>

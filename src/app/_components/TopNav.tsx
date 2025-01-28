@@ -1,3 +1,4 @@
+import { SignedOut, SignedIn, SignInButton, UserButton } from '@clerk/nextjs'
 import React from 'react'
 
 const TopNav = () => {
@@ -10,6 +11,14 @@ const TopNav = () => {
             <li>About</li>
             <li>Contact</li>
             </ul>
+        </div>
+        <div>
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
     </nav>
   )

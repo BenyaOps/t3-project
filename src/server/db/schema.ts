@@ -66,3 +66,15 @@ export const events = createTable(
     nameIndex: index("name_idx").on(example.name),
   })
 );
+
+export const images = createTable(
+  "image",
+  {
+    id: bigint("id", { mode: "number" }).primaryKey().autoincrement(),
+    url: varchar("url", { length: 256 }),
+    title: varchar("title", { length: 256 }),
+  },
+  (example) => ({
+    urlIndex: index("url_idx").on(example.url),
+  })
+);
