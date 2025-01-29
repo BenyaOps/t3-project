@@ -1,10 +1,12 @@
 import { SignedOut, SignedIn } from "@clerk/nextjs";
 import { db } from "~/server/db";
+import { getMyImages } from "~/server/queries";
 
 export const dynamic = "force-dynamic";
 
 async function Images() {
-  const images = await db.query.images.findMany();
+  const images = await getMyImages();
+
   return images.map((image) => (
     <div key={image.id}>
       <img src={image.url ?? ""} alt={image.title ?? "image"} />
