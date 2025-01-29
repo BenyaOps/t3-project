@@ -1,4 +1,5 @@
 import { SignedOut, SignedIn } from "@clerk/nextjs";
+import Image from "next/image";
 import { db } from "~/server/db";
 import { getMyImages } from "~/server/queries";
 
@@ -9,7 +10,9 @@ async function Images() {
 
   return images.map((image) => (
     <div key={image.id}>
-      <img src={image.url ?? ""} alt={image.title ?? "image"} />
+      <Image src={image.url ?? ""} alt={image.title ?? "image"} width={320} height={320}
+      style={{objectFit: 'contain' }} 
+      />
     </div>
   ));
 }

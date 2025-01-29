@@ -15,7 +15,8 @@ const config = {
     images: {
         domains: [
             "images.unsplash.com",
-            "ufs.sh"
+            "ufs.sh",
+            "utfs.io",
         ],
     },
 };
