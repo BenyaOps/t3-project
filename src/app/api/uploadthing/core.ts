@@ -35,11 +35,13 @@ export const ourFileRouter = {
       //console.log("file");
       //console.log(file);
       
-      await db.insert(images).values({
+      const insertImages = await db.insert(images).values({
         title: file.name,
         url: file.url,
         userId: metadata.userId,
       });
+      console.log("insertImages");
+      console.log(insertImages);
       console.log("Uploaded by", metadata.userId);
       
       return { uploadedBy: metadata.userId };
