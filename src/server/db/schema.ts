@@ -73,6 +73,7 @@ export const images = createTable(
     id: bigint("id", { mode: "number" }).primaryKey().autoincrement(),
     url: varchar("url", { length: 256 }),
     title: varchar("title", { length: 256 }),
+    userId: varchar("user_id", { length: 256 }).notNull(),
   },
   (example) => ({
     urlIndex: index("url_idx").on(example.url),

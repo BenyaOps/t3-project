@@ -1,5 +1,6 @@
 import { SignedOut, SignedIn, SignInButton, UserButton } from '@clerk/nextjs'
 import React from 'react'
+import { UploadButton } from '~/utils/uploadthing'
 
 const TopNav = () => {
   return (
@@ -12,11 +13,12 @@ const TopNav = () => {
             <li>Contact</li>
             </ul>
         </div>
-        <div>
+        <div className='flex flex-row'>
           <SignedOut>
             <SignInButton />
           </SignedOut>
           <SignedIn>
+            
             <UserButton />
           </SignedIn>
         </div>
