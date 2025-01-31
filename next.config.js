@@ -13,8 +13,8 @@ const coreConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    //domains: ["images.unsplash.com", "ufs.sh", "utfs.io"],
-    remotePatterns: [
+    domains: ["images.unsplash.com", "ufs.sh", "utfs.io"],
+    /*remotePatterns: [
       {
         protocol: "https",
         hostname: "images.unsplash.com",
@@ -36,7 +36,7 @@ const coreConfig = {
         pathname: "/.*",
         search: ""
       },
-    ],
+    ], */
   },
 };
 

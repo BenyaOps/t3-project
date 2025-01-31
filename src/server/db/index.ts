@@ -16,3 +16,19 @@ const conn = globalForDb.conn ?? createPool({ uri: env.DATABASE_URL });
 if (env.NODE_ENV !== "production") globalForDb.conn = conn;
 
 export const db = drizzle(conn, { schema, mode: "default" });
+export async function testDbConnection() {
+  try {
+    await conn.query("SELECT 1");
+    console.log("Database connection is valid.");
+  } catch (error) {
+    console.error("Database connection failed:", error);
+  }
+}
+
+testDbConnection()
+  .then(() => {
+    console.log("Database connection test passed.");
+  })
+  .catch((error) => {
+    console.error("Database connection test failed:", error);
+  });
