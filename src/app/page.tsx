@@ -1,5 +1,6 @@
 import { SignedOut, SignedIn } from "@clerk/nextjs";
 import Image from "next/image";
+import Link from "next/link";
 import { db } from "~/server/db";
 import { getMyImages } from "~/server/queries";
 
@@ -8,13 +9,18 @@ export const dynamic = "force-dynamic";
 async function Images() {
   const images = await getMyImages();
 
-  return images.map((image) => (
-    <div key={image.id}>
-      <Image src={image.url ?? ""} alt={image.title ?? "image"} width={320} height={320}
-      style={{objectFit: 'contain' }} 
-      />
+  return (
+    <div className="flex flex-wrap gap-4 justify-center">
+      {images.map((image) => (
+        <div key={image.id} className="w-48 h-48 flex flex-col">
+         <Link href={`img/${image.id}`}>
+          <Image src={image.url ?? ""} alt={image.title ?? "Image"} width={320} height={320} />
+         </Link>
+          <p>{image.title}</p>
+        </div>
+      ))}
     </div>
-  ));
+  );
 }
 async function Posts() {
   const posts = await db.query.posts.findMany();
