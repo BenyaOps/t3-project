@@ -6,9 +6,11 @@ export default clerkMiddleware(async (auth, req) => {
   if (isProtectedRoute(req)) await auth.protect()
     //si algo falla valida si es auth o auth()
 },{
-  authorizedParties: [
-    "https://t3-project-5of0unz17-benyaminroots-projects.vercel.app",
-  ]
+    authorizedParties: [
+      "https://t3-project-5of0unz17-benyaminroots-projects.vercel.app",
+      "t3-project-hazel.vercel.app",
+      
+    ]
 })
 
 export const config = {
