@@ -8,7 +8,8 @@ export default clerkMiddleware(async (auth, req) => {
 },{
     authorizedParties: [
       "https://t3-project-5of0unz17-benyaminroots-projects.vercel.app",
-      "t3-project-hazel.vercel.app",
+      "https://t3-project-hazel.vercel.app",
+      "http://localhost:3000"
       
     ]
 })
