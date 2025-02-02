@@ -1,6 +1,7 @@
 import { SignedOut, SignedIn, SignInButton, UserButton } from '@clerk/nextjs'
 import React from 'react'
 import { UploadButton } from '~/utils/uploadthing'
+import { SimpleUploadButton } from './simole-upload-button'
 
 const TopNav = () => {
   return (
@@ -18,7 +19,7 @@ const TopNav = () => {
             <SignInButton />
           </SignedOut>
           <SignedIn>
-            
+            <SimpleUploadButton />
             <UserButton />
           </SignedIn>
         </div>
