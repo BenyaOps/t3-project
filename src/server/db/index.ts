@@ -24,7 +24,7 @@ export async function testDbConnection() {
     console.error("Database connection failed:", error);
   }
 }
-
+/*
 testDbConnection()
   .then(() => {
     console.log("Database connection test passed.");
@@ -32,3 +32,4 @@ testDbConnection()
   .catch((error) => {
     console.error("Database connection test failed:", error);
   });
+*/

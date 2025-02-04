@@ -3,7 +3,7 @@ import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 const isProtectedRoute = createRouteMatcher(['/dashboard(.*)', '/forum(.*)'])
 
 export default clerkMiddleware(async (auth, req) => {
-  if (isProtectedRoute(req)) await auth.protect()
+  if (isProtectedRoute(req)) await auth.protect();
     //si algo falla valida si es auth o auth()
 },{
     authorizedParties: [
