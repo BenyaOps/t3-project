@@ -1,7 +1,7 @@
 import React from 'react'
 
 type IProps = {
-    top: boolean
+    top?: boolean
 }
 const Card = ({top = false}: IProps) => {
   return (
