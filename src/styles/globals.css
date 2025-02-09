@@ -13,8 +13,20 @@ dialog {
 .card {
     @apply flex justify-between rounded-sm  pl-4 pr-4 pt-3 pb-3;
    background-color: #1A1919;
+   position: relative;
+   max-width: 520px;
 }
 .button {
-    @apply  text-white;
+    @apply  text-white  py-2 px-3;
     background-color: #727272;
+}
+
+.top {
+    @apply flex justify-between;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+svg {
+    display: inline-block;
 }

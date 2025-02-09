@@ -1,4 +1,9 @@
+"use client"
+
 import React from 'react'
+import GeoIcon from '../icons/GeoIcon'
+import UserIcon from '../icons/UserIcon'
+import Button from '../shared/Button'
 
 type IProps = {
     top?: boolean
@@ -9,16 +14,16 @@ const Card = ({top = false}: IProps) => {
         <div className="left">
             <p className="title">Noche de Bar</p>
             <div className="details">
-                <p>Fecha: 12/12/2020</p>
-                <p>Hora: 20:00</p>
-                <p>Lugar: Bar de la esquina</p>
+                <p><GeoIcon /> 50 asistentes</p>
+                <p><GeoIcon /> Lima Miraflores Av. Paz</p>
+                <p className='text-primary'><UserIcon /> 50 asistentes</p>
             </div>
-            <div className="button">
-                <button className='button'>Unirme <img src="assets/img/arrow-right.png" alt="arrow" width={30} /> </button>
-            </div>
+            <Button gray={true} >
+                Unirme <img  className='inline-block' src="assets/img/arrow-right.png" alt="arrow" width={16} />
+            </Button>
         </div>
         <div className="right">
-            <img src="assets/img/beer.png" alt="beer" width={100} />
+            <img src="assets/img/beer.png" alt="beer" width={182} />
         </div>
         {top && <div className="top">Top</div>}
     </div>

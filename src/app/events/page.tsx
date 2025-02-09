@@ -1,14 +1,16 @@
 import React from 'react'
-import Card from '../_components/events/Card'
+import Event from '../_components/events/Event'
 
 const EventsPage = () => {
   return (
     <div>
-      <h1>Events</h1>
-      <Card top={true} />
-      <Card />
-      <Card />
-      <Card />
+      <div className="container m-auto max-w-[800px]">
+        <h1>Events</h1>
+        <Event isTop={true} />
+        <Event />
+        <Event />
+        <Event />
+      </div>
     </div>
   )
 }
