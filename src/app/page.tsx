@@ -1,7 +1,7 @@
 import { SignedOut, SignedIn } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
-import { db } from "~/server/db";
+//import { db } from "~/server/db";
 import { getMyImages } from "~/server/queries";
 
 export const dynamic = "force-dynamic";
@@ -22,15 +22,7 @@ async function Images() {
     </div>
   );
 }
-async function Posts() {
-  const posts = await db.query.posts.findMany();
-  return posts.map((post) => (
-    <div key={post.id}>
-      <h2>{post.name}</h2>
-      <p>{post.updatedAt?.toString()}</p>
-    </div>
-  ));
-}
+
 export default async function HomePage() {
 
   //const posts = await db.query.posts.findMany();
@@ -55,7 +47,7 @@ export default async function HomePage() {
         <div className="w-full h-full text-2xl">Please sign in above</div>
       </SignedOut>
       <SignedIn>
-        <Posts />
+        
         <Images />
       </SignedIn>
     </main>
