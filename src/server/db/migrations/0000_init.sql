@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS `notworking_events_user` (
 	`id` bigint AUTO_INCREMENT NOT NULL,
 	`clerk_id` varchar(256),
 	`name` varchar(256),
+	`username` varchar(256),
 	`first_name` varchar(256),
 	`last_name` varchar(256),
 	`birthdate` timestamp,

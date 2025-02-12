@@ -9,6 +9,6 @@ export const imagesTable = mysqlTable('notworking_events_images',
         userId: varchar("user_id", { length: 256 }).notNull(),
       },
       (example) => ({
-        urlIndex: index("url_idx").on(example.url),
+        urlIndex: index("url_images_idx").on(example.url),
       })
 );
