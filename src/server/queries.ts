@@ -56,8 +56,8 @@ export async function createUser() {
     const user = await getUser();
     // verify user exists
     const existingUser = await db.select().from(usersTable).where( eq(usersTable.clerk_id, user.id) ).limit(1);
-    console.log('--existingUser-');
-    console.log(existingUser);
+    //console.log('--existingUser-');
+    //console.log(existingUser);
     
     if (existingUser.length === 0) {
       // create user
