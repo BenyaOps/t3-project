@@ -5,7 +5,20 @@
 body {
     @apply bg-black text-white;
 }
-
+.title_page {
+    background: #FFCE00;
+background: linear-gradient(to right, #FFCE00 3%, #FAF204 36%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+.title {
+    @apply text-2xl font-bold text-yellow2;
+}
+.container_events {
+    background-color: rgba(24, 23, 23, 0.67);
+}
 dialog {
     max-width: 100vw;
     max-height: 100vh;
@@ -20,6 +33,7 @@ dialog {
     @apply  text-white  py-2 px-3;
     background-color: #727272;
 }
+
 
 .top {
     @apply flex justify-between;
@@ -39,6 +53,8 @@ svg {
         --popover: 0 0% 100%;
         --popover-foreground: 0 0% 3.9%;
         --primary: 0 0% 9%;
+        --yellow: rgb(221,185, 41);
+        --grey: rgb(217, 217, 217);
         --primary-foreground: 0 0% 98%;
         --secondary: 0 0% 96.1%;
         --secondary-foreground: 0 0% 9%;

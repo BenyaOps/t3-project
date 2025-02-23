@@ -16,7 +16,7 @@ const Card = ({top = false}: IProps) => {
             <div className="details">
                 <p><GeoIcon /> 50 asistentes</p>
                 <p><GeoIcon /> Lima Miraflores Av. Paz</p>
-                <p className='text-primary'><UserIcon /> 50 asistentes</p>
+                <p className='text-yellow2'><UserIcon /> 50 asistentes</p>
             </div>
             <Button gray={true} >
                 Unirme <img  className='inline-block' src="assets/img/arrow-right.png" alt="arrow" width={16} />

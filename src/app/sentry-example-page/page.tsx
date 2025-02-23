@@ -12,19 +12,11 @@ export default function Page() {
       </Head>
 
       <main
-        style={{
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+
       >
-        <h1 style={{ fontSize: "4rem", margin: "14px 0" }}>
+        <h1>
           <svg
-            style={{
-              height: "1em",
-            }}
+
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 200 44"
           >
@@ -38,16 +30,7 @@ export default function Page() {
         <p>Get started by sending us a sample error:</p>
         <button
           type="button"
-          style={{
-            padding: "12px",
-            cursor: "pointer",
-            backgroundColor: "#AD6CAA",
-            borderRadius: "4px",
-            border: "none",
-            color: "white",
-            fontSize: "14px",
-            margin: "18px",
-          }}
+
           onClick={async () => {
             await Sentry.startSpan(
               {
@@ -73,7 +56,7 @@ export default function Page() {
           </a>
           .
         </p>
-        <p style={{ marginTop: "24px" }}>
+        <p className="mt-6">
           For more information, see{" "}
           <a href="https://docs.sentry.io/platforms/javascript/guides/nextjs/">
             https://docs.sentry.io/platforms/javascript/guides/nextjs/

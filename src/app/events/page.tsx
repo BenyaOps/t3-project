@@ -8,8 +8,8 @@ const EventsPage = async () => {
   
   return (
     <div>
-      <div className="container m-auto max-w-[800px]">
-        <h1>Events</h1>
+      <div className="container m-auto max-w-[800px] container_events">
+        <h1 className='title_page'>Eventos</h1>
         <small>{JSON.stringify(user)}</small>
         <Event isTop={true} />
         <Event />
